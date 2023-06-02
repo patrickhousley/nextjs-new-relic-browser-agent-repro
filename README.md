@@ -1,6 +1,6 @@
 # Next.js Router New Relic Browser Agent Reproduction
 
-This repository is a bug reproduction for troubleshooting with Next.js Router and the New Relic Browser Agent. The browser agent is preventing the use the Next.js's `router.push` method and fails to navigate between pages.
+This repository is a bug reproduction for troubleshooting with Next.js Router and the New Relic Browser Agent. The browser agent is preventing the use the Next.js's `router.push` method and fails to navigate between pages. It seems to be related to the `prefetch` feature of Next.js because adding a `Link` to the page that prefetches it solved the problem.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
