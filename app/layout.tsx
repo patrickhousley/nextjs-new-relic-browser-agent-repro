@@ -1,6 +1,5 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <head>
-                <Script
+                <script
                     dangerouslySetInnerHTML={{
                         __html: `
                         window.NREUM || (NREUM = {});
@@ -41,10 +40,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         };
                     `,
                     }}
-                    id="new-relic-browser-agent"
+                    id="new-relic-browser-agent-init"
                     type="text/javascript"
                 />
-                <Script src="/new-relic.js" />
+                {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+                <script id="new-relic-browser-agent" src="/new-relic.js" type="text/javascript" />
             </head>
             <body className={inter.className}>
                 <div className="p-4">{children}</div>
