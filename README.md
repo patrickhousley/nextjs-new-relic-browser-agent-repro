@@ -4,8 +4,6 @@ This repository is a bug reproduction for troubleshooting with Next.js Router an
 
 NOTE: This issue happens regardless of `Link` and `prefetch={false}` in development mode. To fully test please use `pnpm build` and `pnpm start` for a production build.
 
-NOTE: Environment variables are not required to reproduce the issue.
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
