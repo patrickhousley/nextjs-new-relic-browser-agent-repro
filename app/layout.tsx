@@ -15,36 +15,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <head>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                        window.NREUM || (NREUM = {});
-
-                        NREUM.init = {
-                            distributed_tracing: { enabled: true },
-                            privacy: { cookies_enabled: true },
-                            ajax: { deny_list: ["bam.nr-data.net"] },
-                        };
-
-                        NREUM.loader_config = {
-                            licenseKey: "${licenseKey}",
-                            applicationID: "${applicationID}",
-                        };
-
-                        NREUM.info = {
-                            beacon: "bam.nr-data.net",
-                            errorBeacon: "bam.nr-data.net",
-                            licenseKey: "${licenseKey}",
-                            applicationID: "${applicationID}",
-                            sa: 1,
-                        };
-                    `,
-                    }}
-                    id="new-relic-browser-agent-init"
-                    type="text/javascript"
-                />
                 {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                <script id="new-relic-browser-agent" src="/new-relic.js" type="text/javascript" />
+                <script src="/new-relic.js" type="text/javascript" />
             </head>
             <body className={inter.className}>
                 <div className="p-4">{children}</div>
